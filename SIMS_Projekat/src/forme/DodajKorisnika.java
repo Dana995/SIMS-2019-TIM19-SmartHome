@@ -13,6 +13,7 @@ import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.JSeparator;
 
 public class DodajKorisnika extends JDialog {
 
@@ -22,6 +23,7 @@ public class DodajKorisnika extends JDialog {
 	private JTextField unosPrezimena;
 	private JTextField unosKoriImena;
 	private JTextField unosLozinke;
+	private JTextField pretraga;
 
 	/**
 	 * Launch the application.
@@ -40,26 +42,26 @@ public class DodajKorisnika extends JDialog {
 	 * Create the dialog.
 	 */
 	public DodajKorisnika() {
-		setBounds(100, 100, 347, 349);
+		setBounds(100, 100, 347, 419);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
 		JLabel lblUnesiIme = new JLabel("Unesi Ime: ");
-		lblUnesiIme.setBounds(10, 11, 128, 25);
+		lblUnesiIme.setBounds(10, 69, 128, 25);
 		contentPanel.add(lblUnesiIme);
 		
 		JLabel lblPrezime = new JLabel("Prezime: ");
-		lblPrezime.setBounds(10, 71, 71, 14);
+		lblPrezime.setBounds(10, 129, 71, 14);
 		contentPanel.add(lblPrezime);
 		
 		JLabel lblKorisnickoIme = new JLabel("Korisnicko Ime: ");
-		lblKorisnickoIme.setBounds(10, 127, 87, 14);
+		lblKorisnickoIme.setBounds(10, 185, 87, 14);
 		contentPanel.add(lblKorisnickoIme);
 		
 		JLabel lblLozinka = new JLabel("Lozinka: ");
-		lblLozinka.setBounds(10, 179, 71, 14);
+		lblLozinka.setBounds(10, 237, 71, 14);
 		contentPanel.add(lblLozinka);
 		
 		JRadioButton adminRadioDugme = new JRadioButton("Admin");
@@ -68,17 +70,17 @@ public class DodajKorisnika extends JDialog {
 			}
 		});
 		adminRadioDugme.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		adminRadioDugme.setBounds(10, 223, 71, 23);
+		adminRadioDugme.setBounds(10, 281, 71, 23);
 		contentPanel.add(adminRadioDugme);
 		
 		JRadioButton rRadioDugme = new JRadioButton("Read Korisnik");
 		rRadioDugme.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		rRadioDugme.setBounds(88, 223, 91, 23);
+		rRadioDugme.setBounds(88, 281, 91, 23);
 		contentPanel.add(rRadioDugme);
 		
 		JRadioButton rwRadioDugme = new JRadioButton("ReadWrte Korisnik");
 		rwRadioDugme.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		rwRadioDugme.setBounds(197, 223, 128, 23);
+		rwRadioDugme.setBounds(197, 281, 128, 23);
 		contentPanel.add(rwRadioDugme);
 		
 		unosImena = new JTextField();
@@ -86,7 +88,7 @@ public class DodajKorisnika extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		unosImena.setBounds(107, 13, 164, 20);
+		unosImena.setBounds(107, 71, 164, 20);
 		contentPanel.add(unosImena);
 		unosImena.setColumns(10);
 		
@@ -95,7 +97,7 @@ public class DodajKorisnika extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		unosPrezimena.setBounds(107, 68, 164, 20);
+		unosPrezimena.setBounds(107, 126, 164, 20);
 		contentPanel.add(unosPrezimena);
 		unosPrezimena.setColumns(10);
 		
@@ -104,7 +106,7 @@ public class DodajKorisnika extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		unosKoriImena.setBounds(107, 124, 164, 20);
+		unosKoriImena.setBounds(107, 182, 164, 20);
 		contentPanel.add(unosKoriImena);
 		unosKoriImena.setColumns(10);
 		
@@ -113,14 +115,45 @@ public class DodajKorisnika extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		unosLozinke.setBounds(107, 176, 164, 20);
+		unosLozinke.setBounds(107, 234, 164, 20);
 		contentPanel.add(unosLozinke);
 		unosLozinke.setColumns(10);
 		
 		JLabel lblPritisniteEnterNakon = new JLabel("Pritisnite ENTER nakon unosa u svako od polja!");
 		lblPritisniteEnterNakon.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 10));
-		lblPritisniteEnterNakon.setBounds(10, 252, 289, 14);
+		lblPritisniteEnterNakon.setBounds(10, 310, 289, 14);
 		contentPanel.add(lblPritisniteEnterNakon);
+		
+		pretraga = new JTextField();
+		pretraga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		pretraga.setBounds(107, 14, 164, 20);
+		contentPanel.add(pretraga);
+		pretraga.setColumns(10);
+		
+		JLabel lblUnesiteKime = new JLabel("Unesite kIme: ");
+		lblUnesiteKime.setBounds(10, 17, 87, 14);
+		contentPanel.add(lblUnesiteKime);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(0, 45, 331, 13);
+		contentPanel.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(-6, 346, 331, 1);
+		contentPanel.add(separator_1);
+		
+		JButton pretraziDugme = new JButton("ok");
+		pretraziDugme.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		pretraziDugme.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		pretraziDugme.setBounds(281, 13, 38, 23);
+		contentPanel.add(pretraziDugme);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

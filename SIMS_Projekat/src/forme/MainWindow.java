@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import aplikacija.Admin;
+import aplikacija.User;
 import mein.Main;
 
 import javax.swing.JMenuBar;
@@ -46,7 +47,7 @@ public class MainWindow extends JFrame {
 	public MainWindow() {
 		// Ovde ucitama korisnike za labelu u kojoj pise ko je trenutno aktivan, kasnije nee biti potrebno!
 		try {
-			LoginScreen.ucitajKorisnike();
+			User.ucitajKorisnike();
 		} catch (IOException e2) {
 		
 			System.out.println("ne mogu da iscitam korisnike iz MainWindows konstruktora!");
@@ -72,13 +73,6 @@ public class MainWindow extends JFrame {
 		treci.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.aktivanKorisnik = null;
-				System.out.println("Privremeno ubacena za metoda ucitavanje dok ne sklopim u main....");
-				try {
-					LoginScreen.ucitajKorisnike();
-				} catch (IOException e1) {
-					
-					System.out.println("Ucitaj korisnike!");
-				}
 				LoginScreen lg = new LoginScreen();
 				setVisible(false);
 				lg.setVisible(true);

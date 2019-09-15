@@ -1,3 +1,4 @@
 admin|korisnicko1|lozinka1|bozana|tankosic
-ur|kor2|loz2|stojan|velickovic
-urw|kor3|loz3|andrija|velickovic
+rw|kor3|loz3|andrija|velickovicr
+r|dasd|das|dsad|dsad
+admin|kor2|loz2|pera|peric

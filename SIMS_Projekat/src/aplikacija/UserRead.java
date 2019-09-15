@@ -13,13 +13,15 @@ import stanje.State;
 /** @pdOid 55b59fd7-707b-4b0b-82f0-112d1fb58e1a */
 public class UserRead extends User {
 
+	public UserRead(String ime, String prezime, String korisnickoIme, String lozinka) {
+		super(ime, prezime, korisnickoIme, lozinka);
+		// TODO Auto-generated constructor stub
+	}
+
 	public UserRead() {
 		
 	}
-	public UserRead(State state) {
-		super(state);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	
 }

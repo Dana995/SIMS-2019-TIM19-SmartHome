@@ -12,6 +12,12 @@ import java.util.*;
 public class Admin extends User {
 	
 	
+	
+	public Admin(String ime, String prezime, String korisnickoIme, String lozinka) {
+		super(ime, prezime, korisnickoIme, lozinka);
+		// TODO Auto-generated constructor stub
+	}
+
 	public Admin() {
 		
 	}

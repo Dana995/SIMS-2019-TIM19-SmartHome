@@ -50,7 +50,7 @@ public class LoginScreen extends JFrame {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		ucitajKorisnike();
+		User.ucitajKorisnike();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -131,41 +131,6 @@ public class LoginScreen extends JFrame {
 
 	public static boolean flag;
 
-	public static void ucitajKorisnike() throws IOException {
-
-		BufferedReader bf = new BufferedReader(new FileReader("korisnici.txt"));
-		String linija;
-		while ((linija = bf.readLine()) != null) {
-			String[] niz = linija.split("\\|");
-
-			// Dodati konstruktor za kreiranje Usera
-			if (niz[0].equalsIgnoreCase("admin")) {
-				Admin a = new Admin();
-				a.setKorisnickoIme(niz[1]);
-				a.setLozinka(niz[2]);
-				a.setIme(niz[3]);
-				a.setPrezime(niz[4]);
-				Main.listaKorisnika.add(a);
-			} else if (niz[0].equalsIgnoreCase("ur")) {
-				UserRead ur = new UserRead();
-				ur.setKorisnickoIme(niz[1]);
-				ur.setLozinka(niz[2]);
-				ur.setIme(niz[3]);
-				ur.setPrezime(niz[4]);
-				Main.listaKorisnika.add(ur);
-			} else if (niz[0].equalsIgnoreCase("urw")) {
-				UserReadWrite urw = new UserReadWrite();
-				urw.setKorisnickoIme(niz[1]);
-				urw.setLozinka(niz[2]);
-				urw.setIme(niz[3]);
-				urw.setPrezime(niz[4]);
-				Main.listaKorisnika.add(urw);
-			}
-
-		}
-		bf.close();
-
-	}
 
 	public static boolean ulogujSe() {
 		System.out.println("Funkcija pozvana!");
